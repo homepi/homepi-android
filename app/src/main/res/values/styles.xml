@@ -1,0 +1,59 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme.Default" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="textColor">@color/darkTextColor</item>
+        <item name="bgColor">@color/lightTextColor</item>
+        <item name="bgDarkColor">@color/lighterTextColor</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="navbarColor">@color/colorAccent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.Dark" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="textColor">@color/lightTextColor</item>
+        <item name="bgColor">@color/darkTextColor</item>
+        <item name="bgDarkColor">@color/darkerTextColor</item>
+        <item name="colorPrimary">#333</item>
+        <item name="colorPrimaryDark">#333</item>
+        <item name="navbarColor">@color/darkerTextColor</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/darkerTextColor</item>
+    </style>
+
+    <style name="AddServerDialogLightTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/lightTextColor</item>
+        <item name="android:textColor">@color/darkTextColor</item>
+    </style>
+
+    <style name="AddServerDialogDarkTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/darkTextColor</item>
+        <item name="android:textColor">@color/lightTextColor</item>
+    </style>
+
+    <style name="TextInputLayout">
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="EditTextAppTheme">
+        <item name="colorControlNormal">?attr/textColor</item>
+        <item name="colorControlActivated">?attr/textColor</item>
+        <item name="colorControlHighlight">?attr/textColor</item>
+    </style>
+
+    <style name="AppTheme.Dark.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="LanguageSpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">?attr/textColor</item>
+    </style>
+
+    <style name="AppTheme.Dark.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.Dark.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

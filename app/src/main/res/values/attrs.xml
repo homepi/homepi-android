@@ -1,0 +1,13 @@
+<resources>
+    <attr name="textColor" format="reference" />
+    <attr name="bgColor" format="reference" />
+    <attr name="bgDarkColor" format="reference" />
+    <attr name="navbarColor" format="reference" />
+    <attr name="trackColor" format="reference" />
+<!--    <attr name="thumbColor" format="reference" />-->
+    <string-array name="languages">
+        <item>@string/choose_lang</item>
+        <item>@string/english</item>
+        <item>@string/persian</item>
+    </string-array>
+</resources>

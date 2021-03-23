@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="icon_door">&#xf52b;</string>
+    <string name="icon_toggle">&#xf205;</string>
+    <string name="icon_edit">&#xf044;</string>
+</resources>

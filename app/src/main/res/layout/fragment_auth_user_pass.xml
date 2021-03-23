@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/bgColor"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:foregroundGravity="top|left|right|center_vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/enter_your_username_and_password_to_login"
+        android:textColor="?attr/textColor"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/serverTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/server_address"
+        android:textColor="?attr/textColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/serverAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/http"
+        android:textColor="?attr/textColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/serverTitle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/editServerBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="25dp"
+        android:contentDescription="@string/edit"
+        android:fontFamily="@font/fontawesome"
+        android:text="@string/icon_edit"
+        android:textColor="?attr/textColor"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/usernameInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/usernameInput"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:fontFamily="@font/nunito_bold"
+        android:hint="@string/username"
+        android:inputType="text"
+        android:paddingBottom="15dp"
+        android:textAlignment="viewStart"
+        android:textColor="?attr/textColor"
+        android:textColorHint="?attr/textColor"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/serverAddress"
+        tools:ignore="Autofill" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/passwordInput"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:fontFamily="@font/nunito_bold"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingBottom="15dp"
+        android:textAlignment="viewStart"
+        android:textColor="?attr/textColor"
+        android:textColorHint="?attr/textColor"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameInput"
+        tools:ignore="Autofill" />
+
+    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_shape_circle"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordInput"
+        app:spinning_bar_color="#FFF"
+        app:spinning_bar_padding="6dp"
+        app:spinning_bar_width="4dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

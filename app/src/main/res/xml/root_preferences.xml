@@ -1,0 +1,43 @@
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="@string/appearance_header">
+
+        <SwitchPreferenceCompat
+            app:key="light_mode"
+            app:title="@string/light_mode"
+            app:summary="Turn on the lights" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="Feedback_category"
+        app:title="Feedback"
+        app:summary="Report technical issues or suggest new features">
+
+        <Preference
+            app:key="email"
+            app:summary="josheghani.dev@gmail.com"
+            app:title="Email">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="mailto://josheghani.dev@gmail.com" />
+
+        </Preference>
+
+        <Preference
+            app:key="github"
+            app:summary="https://github.com/HomePi"
+            app:title="Github">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/HomePi" />
+
+        </Preference>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
