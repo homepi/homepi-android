@@ -26,7 +26,7 @@ import com.mrjosh.homepi.client.responses.UserResult
 import com.mrjosh.homepi.activities.DashboardActivity
 import com.mrjosh.homepi.services.AuthenticatorService
 import com.mrjosh.homepi.client.responses.AuthenticationResult
-import br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+import com.apachat.loadingbutton.core.customViews.CircularProgressButton
 
 class UserPassFragment: Fragment() {
 
@@ -81,7 +81,7 @@ class UserPassFragment: Fragment() {
                     when {
                         response.isSuccessful -> {
                             val tokenResult: AuthenticationResult.Result = response.body()!!.result
-                            val userRequest = client.getUser(tokenResult.token)
+                            val userRequest = client.getUser("Bearer " + tokenResult.token)
                             userRequest!!.enqueue(object : Callback<UserResult?> {
                                 override fun onResponse(call: Call<UserResult?>, userResponse: Response<UserResult?>) {
                                     when {
@@ -99,8 +99,8 @@ class UserPassFragment: Fragment() {
                                             userData.putString("base_uri", server?.baseUri)
                                             userData.putString("avatars_base_uri", server?.avatarsBaseUri)
                                             userData.putString("api_base_uri", server?.apiBaseUri)
-                                            userData.putString("token", tokenResult.token)
-                                            userData.putString("refreshed_token", tokenResult.refreshed_token)
+                                            userData.putString("token", "Bearer " + tokenResult.token)
+                                            userData.putString("refreshed_token", "Bearer " + tokenResult.refreshed_token)
 
                                             Log.d("Account-Details", userData.toString())
                                             accountManager.addAccountExplicitly(account, null, userData)
@@ -124,6 +124,7 @@ class UserPassFragment: Fragment() {
                                         }
                                         else -> {
                                             Log.d("Login-failed-response", response.toString())
+                                            Toast.makeText(activity, R.string.authenticationFailed, Toast.LENGTH_SHORT).show()
                                             loginBtn?.revertAnimation()
                                         }
                                     }
@@ -157,6 +158,8 @@ class UserPassFragment: Fragment() {
                     }
                 }
                 override fun onFailure(call: Call<AuthenticationResult?>, t: Throwable) {
+                    Log.d("Login-failed-response", t.toString())
+                    Toast.makeText(activity, R.string.authenticationFailed, Toast.LENGTH_SHORT).show()
                     loginBtn?.revertAnimation()
                 }
             })

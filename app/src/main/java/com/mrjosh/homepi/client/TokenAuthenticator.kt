@@ -27,10 +27,10 @@ class TokenAuthenticator(private val a: Activity): Authenticator {
                 val result: AuthenticationResult.Result = response.body()!!.result
                 val accountManager: AccountManager = Utility.getAccountManager(a)
                 newToken = result.token
-                accountManager.setUserData(server.account, "token", newToken)
-                accountManager.setUserData(server.account, "refreshed_token", result.refreshed_token)
-                server.token = result.token
-                server.refreshedToken = result.refreshed_token
+                accountManager.setUserData(server.account, "token", "Bearer $newToken")
+                accountManager.setUserData(server.account, "refreshed_token", "Bearer" + result.refreshed_token)
+                server.token = "Bearer" + result.token
+                server.refreshedToken = "Bearer" + result.refreshed_token
                 a.intent.putExtra("server", server)
             }
             else -> {

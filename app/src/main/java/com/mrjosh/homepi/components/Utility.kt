@@ -32,8 +32,8 @@ class Utility {
 
         fun getServers(c: Context?): List<Server?> {
             val servers: MutableList<Server?> = ArrayList()
-            val accounts: Array<Account?>? = this.getAccounts(c)
-            if (accounts!!.isNotEmpty()) {
+            val accounts: Array<Account?> = this.getAccounts(c)
+            if (accounts.isNotEmpty()) {
                 for (account in accounts) {
                     servers.add(this.getServerViaAccount(c, account!!))
                 }
@@ -41,7 +41,7 @@ class Utility {
             return servers
         }
 
-        private fun getAccounts(c: Context?): Array<Account?>? {
+        private fun getAccounts(c: Context?): Array<Account?> {
             val accountManager: AccountManager = this.getAccountManager(c)
             return accountManager.getAccountsByType(AuthenticatorService.ACCOUNT_TYPE)
         }
@@ -54,28 +54,26 @@ class Utility {
             accountManager.setUserData(account, "username", user?.username)
         }
 
-        @Suppress("DEPRECATION")
-        private fun removeAccount(c: Context, account: Account) {
-            val accounts: Array<Account?>? = this.getAccounts(c)
-            if (accounts!!.isNotEmpty()) {
-                this.getAccountManager(c)
-                    .removeAccount(account, null, null)
+        private fun removeAccount(a: Activity, account: Account) {
+            val accounts: Array<Account?> = this.getAccounts(a)
+            if (accounts.isNotEmpty()) {
+                this.getAccountManager(a)
+                    .removeAccount(account, a, null, null)
             }
         }
 
-        fun removeAccountThenGoToLoginPage(c: Context, account: Account) {
-            this.removeAccount(c, account)
+        fun removeAccountThenGoToLoginPage(a: Activity, account: Account) {
+            this.removeAccount(a, account)
             Handler().postDelayed({
-                val intent = Intent(c, LoginActivity::class.java)
+                val intent = Intent(a, LoginActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                c.startActivity(intent)
+                a.startActivity(intent)
             }, 1000)
         }
 
-        @Suppress("DEPRECATION")
         fun isNetworkConnected(c: Context): Boolean {
             val cm = c.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            val status = cm.activeNetworkInfo != null
+            val status = cm.activeNetwork != null
             if (!status) {
                 val toast = Toast.makeText(
                     c,
@@ -88,7 +86,7 @@ class Utility {
             return status
         }
 
-        fun getServerViaAccount(c: Context?, account: Account): Server? {
+        fun getServerViaAccount(c: Context?, account: Account): Server {
             val accountManager: AccountManager = this.getAccountManager(c)
             val name = account.name
             val baseUri = accountManager.getUserData(account, "base_uri")
@@ -137,10 +135,6 @@ class Utility {
                     .addHeader("TYPE", "phone")
                     .addHeader("MODEL", Build.MODEL)
                 chain.proceed(request.build())
-            }
-            val uri = URI.create(addr)
-            if (uri.port == -1) {
-                addr = uri.scheme + "://" + uri.host + ":55283" + uri.path
             }
             if (!addr.endsWith("/")) {
                 addr = "$addr/"

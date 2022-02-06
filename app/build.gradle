@@ -24,8 +24,13 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildFeatures {
-        dataBinding true
+        viewBinding true
     }
 
 }
@@ -49,11 +54,11 @@ dependencies {
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
-    implementation 'br.com.simplepass:loading-button-android:2.2.0'
+    implementation group: 'com.apachat', name: 'loadingbutton-android', version: '1.0.11'
+    implementation 'com.github.dmytrodanylyk:circular-progress-button:1.2'
     implementation 'com.github.rey5137:material:1.2.5'
-    implementation 'com.elyeproj.libraries:loaderviewlibrary:1.5.0'
+    implementation 'io.github.elye:loaderviewlibrary:3.0.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
-    implementation 'com.diogobernardino:williamchart:2.5.0'
 
     // test packages
     testImplementation 'junit:junit:4.13'

@@ -1,6 +1,7 @@
 package com.mrjosh.homepi.fragments.auth
 
 import retrofit2.Call
+import android.util.Log
 import android.os.Bundle
 import android.view.View
 import retrofit2.Response
@@ -12,7 +13,6 @@ import android.util.Patterns
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.graphics.BitmapFactory
-import android.util.Log
 import androidx.fragment.app.Fragment
 import com.mrjosh.homepi.client.Client
 import com.mrjosh.homepi.models.Server
@@ -21,7 +21,7 @@ import com.mrjosh.homepi.components.Utility
 import com.mrjosh.homepi.client.responses.SystemResult
 import com.google.android.material.textfield.TextInputLayout
 import com.google.android.material.textfield.TextInputEditText
-import br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+import com.apachat.loadingbutton.core.customViews.CircularProgressButton
 
 class ServerFragment: Fragment() {
 
@@ -55,13 +55,12 @@ class ServerFragment: Fragment() {
     private fun checkServer() {
         nextStep?.startAnimation()
 
-        Log.d("GGG", serverAddress!!)
+        Log.d("ServerAddress", serverAddress!!)
 
         val client: Client? = Utility.getRetrofitClient(requireActivity(), serverAddress!!)
         val request = client?.service!!
         request.enqueue(object : Callback<SystemResult?> {
             override fun onResponse(call: Call<SystemResult?>, response: Response<SystemResult?>) {
-                Log.d("GGG", response.raw().code().toString())
                 when {
                     response.isSuccessful -> {
                         val result: SystemResult.Result? = response.body()!!.result
@@ -93,7 +92,9 @@ class ServerFragment: Fragment() {
                 }
             }
             override fun onFailure(call: Call<SystemResult?>, t: Throwable) {
-                couldNotConnectError()
+                nextStep?.revertAnimation()
+                serverAddressLayout?.error = t.message
+                Log.d("ServerFragmentThrow", t.toString())
             }
         })
     }
