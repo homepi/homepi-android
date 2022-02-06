@@ -71,8 +71,8 @@ class DashboardFragment: BaseFragment(),
             override fun onResponse(call: Call<AccessoriesResult?>, response: Response<AccessoriesResult?>) {
                 if (response.isSuccessful) {
                     refreshLayout?.isRefreshing = false
-                    val result: AccessoriesResult.Result? = response.body()?.result
-                    accessories?.addAll(result?.data!!)
+                    val result: List<Accessory>? = response.body()?.result
+                    accessories?.addAll(result!!)
                     val adapter = AccessoryAdapter(requireContext(), accessories!!)
                     accessoriesGridview?.adapter = adapter
                     accessoriesGridview?.onItemClickListener = this@DashboardFragment

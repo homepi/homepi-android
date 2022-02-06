@@ -8,7 +8,7 @@ import com.mrjosh.homepi.client.responses.*
 
 interface Client {
 
-  @get:GET("api/manifest.json")
+  @get:GET("api/")
   val service: Call<SystemResult?>?
 
   @FormUrlEncoded
@@ -18,16 +18,16 @@ interface Client {
   @POST("auth/refresh.json")
   fun refreshToken(@Header("Authorization") token: String?): Call<AuthenticationResult?>?
 
-  @GET("user/me.json")
+  @GET("users/me.json")
   fun getUser(@Header("Authorization") token: String?): Call<UserResult?>?
 
   @GET("accessories/{accessory_id}/run.json")
   fun runAccessory(@Header("Authorization") token: String?, @Path("accessory_id") accessory_id: BigInteger?): Call<JSONObject?>?
 
-  @GET("user/accessories.json")
+  @GET("accessories.json")
   fun getAccessories(@Header("Authorization") token: String?): Call<AccessoriesResult?>?
 
-  @GET("user/logs.json")
+  @GET("users/logs.json")
   fun getLogs(@Header("Authorization") token: String?): Call<LogsResult?>?
 
 }

@@ -106,7 +106,7 @@
         app:layout_constraintTop_toBottomOf="@+id/usernameInput"
         tools:ignore="Autofill" />
 
-    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+    <com.apachat.loadingbutton.core.customViews.CircularProgressButton
         android:id="@+id/loginBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

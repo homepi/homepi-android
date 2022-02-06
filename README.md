@@ -1,14 +1,12 @@
-<p align="center">
-  <img width="200" src="header.svg">
-</p>
-<p align="center">
-<img src="android-studio.png"/>
-</p>
+<pre align="center">
+      __  __                     ____  _
+      / / / /___  ________  ___  / __ \(_)
+    / /_/ / __ \/ __  __ \/ _ \/ /_/ / /
+  / __  / /_/ / / / / / /  __/ ____/ /
+/_/ /_/\____/_/ /_/ /_/\___/_/   /_/
+</pre>
+### This project is under construction.
 
-<p align="center">
-<img src="https://img.shields.io/badge/unstable-develop-blue.svg" alt="Latest Unstable Version">
-<img src="https://img.shields.io/badge/License-Josh-green.svg" alt="License">
-</p>
-
-# SmartHome
-HomePi android kotlin project
+## About HomePi
+HomePI (SmartHome) is an android application that works with raspberry pi and relay boards to control GPIO pins over network!
+This project works with a raspberry pi web server that you can find here https://github.com/homepi/homepi

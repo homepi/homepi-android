@@ -4,6 +4,7 @@ import retrofit2.Call
 import retrofit2.Response
 import android.widget.Toast
 import android.app.Activity
+import android.util.Log
 import java.net.ConnectException
 import java.net.UnknownHostException
 import com.mrjosh.homepi.models.Server
@@ -12,6 +13,7 @@ import com.mrjosh.homepi.components.Utility
 import com.mrjosh.homepi.client.responses.UserResult
 
 class GetUserRequest constructor(private val activity: Activity) : Request(activity) {
+
     private var server: Server? = null
     var callback: Callback? = null
 
@@ -52,7 +54,7 @@ class GetUserRequest constructor(private val activity: Activity) : Request(activ
                         ).show()
                     }
                     else -> {
-                        Utility.removeAccountThenGoToLoginPage(context, server?.account!!)
+                        Utility.removeAccountThenGoToLoginPage(activity, server?.account!!)
                     }
                 }
             }

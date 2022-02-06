@@ -8,12 +8,6 @@ class AccessoriesResult {
 
     @SerializedName("result")
     @Expose
-    val result: Result? = null
-
-    inner class Result {
-        @SerializedName("data")
-        @Expose
-        val data: List<Accessory>? = null
-    }
+    val result: List<Accessory>? = null
 
 }

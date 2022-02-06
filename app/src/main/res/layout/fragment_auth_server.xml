@@ -46,13 +46,13 @@
             android:fontFamily="@font/nunito_bold"
             android:inputType="textWebEditText"
             android:shadowColor="@color/colorAccent"
-            android:text="@string/http"
+            android:text="@string/https"
             android:textColor="?attr/textColor"
             android:theme="@style/EditTextAppTheme" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+    <com.apachat.loadingbutton.core.customViews.CircularProgressButton
         android:id="@+id/nextStep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

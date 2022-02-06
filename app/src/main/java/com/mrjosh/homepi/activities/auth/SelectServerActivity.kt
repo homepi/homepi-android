@@ -18,7 +18,7 @@ import com.mrjosh.homepi.activities.BaseActivity
 import com.github.ybq.android.spinkit.SpinKitView
 import com.mrjosh.homepi.client.responses.UserResult
 import com.mrjosh.homepi.activities.DashboardActivity
-import br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+import com.apachat.loadingbutton.core.customViews.CircularProgressButton
 
 class SelectServerActivity: BaseActivity(), Request.Callback {
 

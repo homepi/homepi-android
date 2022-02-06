@@ -16,8 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Dark"
-        android:fullBackupContent="@xml/backup_descriptor"
-        android:usesCleartextTraffic="true">
+        android:fullBackupContent="@xml/backup_descriptor">
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
