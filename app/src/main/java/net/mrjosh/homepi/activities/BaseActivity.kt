@@ -60,7 +60,7 @@ open class BaseActivity: AppCompatActivity() {
         return AccountManager.get(baseContext)
     }
 
-    fun getServerViaAccount(account: Account?): Server? {
+    fun getServerViaAccount(account: Account?): Server {
         val accountManager: AccountManager = getAccountManager()
         val name = account?.name
         val baseUri = accountManager.getUserData(account, "base_uri")

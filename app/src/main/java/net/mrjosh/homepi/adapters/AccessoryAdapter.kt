@@ -20,12 +20,10 @@ class AccessoryAdapter(private val context: Context,
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val gridView = inflater.inflate(R.layout.accessory_card_view, null)
         var icon: Int = R.drawable.ic_light_on
-        val accessoryIcon: AppCompatImageView
-        val accessoryName: AppCompatTextView
         val accessory: Accessory = accessories[position]
-        accessoryName = gridView.findViewById(R.id.accessory_name)
+        val accessoryName: AppCompatTextView = gridView.findViewById(R.id.accessory_name)
         accessoryName.text = accessory.name
-        accessoryIcon = gridView.findViewById(R.id.accessory_icon)
+        val accessoryIcon: AppCompatImageView = gridView.findViewById(R.id.accessory_icon)
         when (accessory.icon) {
             "doorbell" -> icon = R.drawable.ic_doorbell
             "lamp" -> icon = R.drawable.ic_light_on

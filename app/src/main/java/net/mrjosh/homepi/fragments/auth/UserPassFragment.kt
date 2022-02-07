@@ -87,7 +87,7 @@ class UserPassFragment: Fragment() {
                                     when {
                                         userResponse.isSuccessful -> {
                                             val user: User? = userResponse.body()!!.result
-                                            val accountName: String? = user!!.username + "@" + Utility.getDomainName(server?.baseUri!!)
+                                            val accountName: String = user!!.username + "@" + Utility.getDomainName(server?.baseUri!!)
                                             val accountType: String = AuthenticatorService.ACCOUNT_TYPE
                                             val account = Account(accountName, accountType)
                                             val accountManager: AccountManager = Utility.getAccountManager(requireContext())
@@ -108,7 +108,7 @@ class UserPassFragment: Fragment() {
                                             val intent = Intent(activity, DashboardActivity::class.java)
 
                                             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                                            val server: Server? = Utility.getServerViaAccount(activity, account)
+                                            val server: Server = Utility.getServerViaAccount(activity, account)
 
                                             intent.putExtra("server", server)
                                             intent.putExtra("account", account)

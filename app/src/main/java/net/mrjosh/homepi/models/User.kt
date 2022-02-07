@@ -8,5 +8,5 @@ class User private constructor(
     val username: String,
     val fullname: String,
     val avatar: String,
-    val role: Role
+//    val role: Role
 ) : Serializable
