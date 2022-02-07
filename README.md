@@ -6,5 +6,10 @@ HomePI (SmartHome) is an android application that works with raspberry pi and re
 This project works with a raspberry pi web server that you can find here https://github.com/homepi/homepi
 
 ## ScreenShots
-<img width=190 src=pics/screenshot-01.jpg></img> <img width=190 src=pics/screenshot-02.jpg></img> <img width=190 src=pics/screenshot-03.jpg></img> <img width=190 src=pics/screenshot-04.jpg></img> <img width=190 src=pics/screenshot-05.jpg></img>
+<img width=190 src=pics/screenshot-01.jpg></img> <img width=190 src=pics/screenshot-02.jpg></img> <img width=190 src=pics/screenshot-03.jpg></img> <img width=190 src=pics/screenshot-05.jpg></img>
 
+## Contributing
+Thank you for considering contributing to the HomePi project!
+
+## License
+The HomePI is open-source software licensed under the MIT license.
