@@ -20,6 +20,7 @@ import android.net.ConnectivityManager
 import net.mrjosh.homepi.models.Server
 import net.mrjosh.homepi.client.Client
 import android.accounts.AccountManager
+import android.os.Looper
 import net.mrjosh.homepi.client.TokenAuthenticator
 import net.mrjosh.homepi.client.responses.UserResult
 import retrofit2.converter.gson.GsonConverterFactory
@@ -64,7 +65,7 @@ class Utility {
 
         fun removeAccountThenGoToLoginPage(a: Activity, account: Account) {
             this.removeAccount(a, account)
-            Handler().postDelayed({
+            Handler(Looper.getMainLooper()).postDelayed({
                 val intent = Intent(a, LoginActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 a.startActivity(intent)

@@ -13,6 +13,7 @@ import android.util.Patterns
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.graphics.BitmapFactory
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import net.mrjosh.homepi.client.Client
 import net.mrjosh.homepi.models.Server
@@ -74,7 +75,7 @@ class ServerFragment: Fragment() {
                         fragment.arguments = arguments
                         val bmp = BitmapFactory.decodeResource(resources, R.drawable.ic_done_white_48dp)
                         nextStep?.doneLoadingAnimation(R.color.colorPrimary, bmp)
-                        Handler().postDelayed({
+                        Handler(Looper.getMainLooper()).postDelayed({
                             nextStep?.revertAnimation()
                             parentFragmentManager.beginTransaction()
                                 .setCustomAnimations(

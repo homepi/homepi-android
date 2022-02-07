@@ -18,8 +18,8 @@ class SettingsFragment: PreferenceFragmentCompat() {
         updateCurrentTheme(theme)
     }
 
-    override fun onPreferenceTreeClick(preference: Preference?): Boolean {
-        when (preference?.key) {
+    override fun onPreferenceTreeClick(preference: Preference): Boolean {
+        when (preference.key) {
             "light_mode" -> { toggleDarkMode() }
         }
         return super.onPreferenceTreeClick(preference)
