@@ -8,6 +8,7 @@ import android.os.Handler
 import net.mrjosh.homepi.R
 import android.content.Intent
 import android.accounts.Account
+import android.os.Looper
 import net.mrjosh.homepi.models.Server
 import net.mrjosh.homepi.requests.Request
 import net.mrjosh.homepi.requests.GetUserRequest
@@ -47,7 +48,7 @@ class LaunchActivity: BaseActivity(), Request.Callback {
 
         val accounts: Array<Account> = getAccounts()
 
-        Handler().postDelayed({
+        Handler(Looper.getMainLooper()).postDelayed({
             val newIntent: Intent
             if (accounts.size == 1) {
                 account = accounts[0]
