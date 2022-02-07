@@ -1,4 +1,4 @@
-package net.mrjosh.homepi.models;
+package net.mrjosh.homepi.models
 
 import android.accounts.Account
 import java.io.Serializable
@@ -19,12 +19,12 @@ class Server(
     val apiUri: String
         get() = baseUri + apiBaseUri
 
-    fun getAvatarPath() : String? {
+    fun getAvatarPath() : String {
         val avatarsUri = baseUri + avatarsBaseUri
         return avatarsUri.replace("{avatar_name}", this.avatar!!)
     }
 
-    fun getAvatar(avatar: String) : String? {
+    fun getAvatar(avatar: String) : String {
         val avatarsUri = baseUri + avatarsBaseUri
         return avatarsUri.replace("{avatar_name}", avatar)
     }

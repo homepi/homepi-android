@@ -13,8 +13,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.Dark"
-        android:fullBackupContent="@xml/backup_descriptor">
+        android:theme="@style/AppTheme.Dark">
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"

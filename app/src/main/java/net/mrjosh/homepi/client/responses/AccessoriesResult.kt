@@ -5,9 +5,7 @@ import net.mrjosh.homepi.models.Accessory
 import com.google.gson.annotations.SerializedName
 
 class AccessoriesResult {
-
     @SerializedName("result")
     @Expose
     val result: List<Accessory>? = null
-
 }
