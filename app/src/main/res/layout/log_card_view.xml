@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:padding="5dp">
 
-        <com.mrjosh.homepi.components.RoundLoaderImageView
+        <net.mrjosh.homepi.components.RoundLoaderImageView
             android:id="@+id/avatar"
             android:layout_width="30dp"
             android:layout_height="30dp"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="60dp">
 
-    <com.mrjosh.homepi.components.RoundLoaderImageView
+    <net.mrjosh.homepi.components.RoundLoaderImageView
         android:id="@+id/avatar"
         android:layout_width="40dp"
         android:layout_height="40dp"

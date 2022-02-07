@@ -5,6 +5,8 @@
 *.ap_
 *.aab
 .idea
+app/release/
+
 # Files for the ART/Dalvik VM
 *.dex
 
